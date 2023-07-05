@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cc25738f-13e7-4cfa-a3d9-2ace38b4839c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Digikare.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProviderWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commun/bandeau-navigation/bandeau-navigation.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commun/bandeau-navigation/bandeau-navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commun/dialog/dialog.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/commun/dialog/dialog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/login/login.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/details/details-intervention.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/intervention/creation-intervention/creation-intervention.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/intervention/creation-intervention/creation-intervention.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/intervention/creation-intervention/informations-intervention/informations-intervention.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/intervention/creation-intervention/informations-patient/informations-patient.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/patient/patient.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/professionel-sante/professionel-sante.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/tableau-suivi-interventions/tableau-suivi-interventions.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/suivi-interventions/tableau-suivi-interventions/tableau-suivi-interventions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enum/SexeEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enum/TypeInterventionEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enum/TypeUtilisateurEnum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mapper/interventions.mapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mapper/utilisateur.mapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/api/InterventionApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/api/OperationApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/api/PatientApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/api/UtilisateurApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/front/Operation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/front/Utilisateur.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/front/intervention/InformationsIntervention.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/front/intervention/InformationsPatient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modeles/front/intervention/Intervention.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/referentiel/referentiel-actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/referentiel/referentiel-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/suivi-interventions/suivi-interventions-actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/suivi-interventions/suivi-interventions-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/utilisateur/utilisateur-actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/utilisateur/utilisateur-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/intervention/intervention.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/utilisateur/utilisateur.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Rw01qDEeU6PKsnXVFJS9676Kvw" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Codes/react/Digikare/src/component/suivi-interventions/details&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Codes\\react\\Digikare\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Codes\react\Digikare\src\component\suivi-interventions\details" />
+      <recent name="D:\Codes\react\Digikare\src\component\commun\dialog" />
+      <recent name="D:\Codes\react\Digikare\src\modeles\api" />
+      <recent name="D:\Codes\react\Digikare\src\enum" />
+      <recent name="D:\Codes\react\Digikare\src\modeles\front" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Codes\react\Digikare\src\component" />
+      <recent name="D:\Codes\react\Digikare\src\component\suivi-interventions" />
+      <recent name="D:\Codes\react\Digikare\src\component\suivi-interventions\intervention\creation-intervention" />
+      <recent name="D:\Codes\react\Digikare\src\component\suivi-interventions\intervention\creation-intervention\informations-patient" />
+      <recent name="D:\Codes\react\Digikare\src\component\suivi-interventions\intervention" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc25738f-13e7-4cfa-a3d9-2ace38b4839c" name="Changes" comment="" />
+      <created>1688145628133</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688145628133</updated>
+      <workItem from="1688145630270" duration="1479000" />
+      <workItem from="1688367494148" duration="68644000" />
+      <workItem from="1688557001032" duration="1339000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

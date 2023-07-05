@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.bouton-digikare {
+  background: #FF0266;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 24px 12px 24px;
+}
+
+.bouton-digikare:hover {
+  background: #FF0266;
+  opacity: 0.5
+}
+
+.desactive{
+  opacity: 0.5;
+  color: white !important;
+}
+
+.secondaire {
+  margin-right: 12px;
+  background:#000B3A;
+}
+.secondaire:hover {
+  background: #000B3A;
+  opacity: 0.5
+}
+
+.textfield-digikare {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.Mui-focused fieldset{
+  border-color: #FF0266 !important;
+}

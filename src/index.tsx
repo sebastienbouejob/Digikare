@@ -1,19 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {PersistGate} from 'redux-persist/integration/react'
+import {store, storePersisted} from './redux/store'
+import ProviderWrapper from "./ProviderWrapper";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import LoginComponent from './component/login/login.component'
+import ProfessionelSanteComponent
+    from "./component/suivi-interventions/professionel-sante/professionel-sante.component";
+import PatientComponent from "./component/suivi-interventions/patient/patient.component";
+import CreationInterventionComponent
+    from "./component/suivi-interventions/intervention/creation-intervention/creation-intervention.component";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+
+ReactDOM.render(
+    <ProviderWrapper store={store}>
+        <PersistGate loading={null} persistor={storePersisted}>
+            <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<LoginComponent/>}/>
+                        <Route path="/login" element={<LoginComponent/>}/>
+                        <Route path="/professionnel-sante" element={<ProfessionelSanteComponent/>}/>
+                        <Route path="/patient" element={<PatientComponent/>}/>
+                        <Route path="/intervention/creer" element={<CreationInterventionComponent/>}/>
+                    </Routes>
+            </BrowserRouter>
+        </PersistGate>
+    </ProviderWrapper>,
+    document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
