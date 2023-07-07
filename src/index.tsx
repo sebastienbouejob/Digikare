@@ -7,11 +7,12 @@ import {store, storePersisted} from './redux/store'
 import ProviderWrapper from "./ProviderWrapper";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import LoginComponent from './component/login/login.component'
-import ProfessionelSanteComponent
-    from "./component/suivi-interventions/professionel-sante/professionel-sante.component";
-import PatientComponent from "./component/suivi-interventions/patient/patient.component";
+import SuiviInterventionsProfessionelSanteComponent
+    from "./component/suivi-interventions/suivi-interventions-professionel-sante/suivi-interventions-professionel-sante.component";
+import SuiviInterventionsPatientComponent from "./component/suivi-interventions/suivi-interventions-patient/suivi-interventions-patient.component";
 import CreationInterventionComponent
-    from "./component/suivi-interventions/intervention/creation-intervention/creation-intervention.component";
+    from "./component/suivi-interventions/intervention/creation/creation-intervention.component";
+import App from "./App";
 
 
 ReactDOM.render(
@@ -19,10 +20,10 @@ ReactDOM.render(
         <PersistGate loading={null} persistor={storePersisted}>
             <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<LoginComponent/>}/>
+                        <Route path="/" element={<App/>}/>
                         <Route path="/login" element={<LoginComponent/>}/>
-                        <Route path="/professionnel-sante" element={<ProfessionelSanteComponent/>}/>
-                        <Route path="/patient" element={<PatientComponent/>}/>
+                        <Route path="/professionnel-sante" element={<SuiviInterventionsProfessionelSanteComponent/>}/>
+                        <Route path="/patient" element={<SuiviInterventionsPatientComponent/>}/>
                         <Route path="/intervention/creer" element={<CreationInterventionComponent/>}/>
                     </Routes>
             </BrowserRouter>

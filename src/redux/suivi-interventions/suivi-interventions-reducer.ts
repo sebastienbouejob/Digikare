@@ -1,15 +1,14 @@
-import {Utilisateur} from "../../modeles/front/Utilisateur";
 import {suiviInterventionsActionsTypes} from "./suivi-interventions-actions";
-import {Intervention} from "../../modeles/front/intervention/Intervention";
+import {Intervention} from "../../model/front/intervention/Intervention";
 
 
 export const initialState = {
     suiviInterventions: Array<Intervention>()
 }
 
-export default function suiviInterventionReducer(state = initialState, action: any ){
+export default function suiviInterventionReducer(state = initialState, action: any) {
 
-    switch (action.type){
+    switch (action.type) {
         case suiviInterventionsActionsTypes.ENREGISTRER_SUIVI_INTERVENTIONS:
             return {
                 ...state,

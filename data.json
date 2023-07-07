@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": "user1",
+      "lastname": "Le Huec",
+      "firstname": "Jean-Charles",
+      "sex": "MALE",
+      "email": "jclehuec@gmail.com",
+      "type": "PS",
+      "login": "jclehuec"
+    },
+    {
+      "id": "user2",
+      "lastname": "Boué",
+      "firstname": "Sébastien",
+      "sex": "MALE",
+      "email": "sebastienboue@gmail.com",
+      "type": "P",
+      "login": "sboue"
+    }
+  ],
+  "careTraks": [
+    {
+      "id": "track01",
+      "idPs": "user1",
+      "idPatient": "user2",
+      "operation": {
+        "id": "ptg",
+        "title": "Prothèse de genou"
+      },
+      "patient": {
+        "lastname": "Boué",
+        "firstname": "Sébastien",
+        "sex": "MALE",
+        "email": "sebastienboue@gmail.com"
+      },
+      "interventionDate": "2017-04-25T12:00:00-06:00"
+    },
+    {
+      "id": "track03",
+      "idPs": "user1",
+      "idPatient": "user2",
+      "operation": {
+        "id": "lca",
+        "title": "Ligament croisé Antérieur"
+      },
+      "patient": {
+        "lastname": "Boué",
+        "firstname": "Sébastien",
+        "sex": "MALE",
+        "email": "sebastienboue@gmail.com"
+      },
+      "interventionDate": "2017-12-25T12:00:00-06:00"
+    },
+    {
+      "id": "track1.6765471295761463",
+      "idPs": "user1",
+      "idPatient": "user10.941633764147397",
+      "operation": {
+        "title": "Ligament croisé Antérieur",
+        "id": "lca"
+      },
+      "patient": {
+        "id": "user10.941633764147397",
+        "sex": "MALE",
+        "lastname": "Boué",
+        "firstname": "Sébastien",
+        "email": "sebastienbouefree@gmail.com"
+      },
+      "interventionDate": "Tue Jul 04 2023"
+    },
+    {
+      "id": "track4.452863979488752",
+      "idPs": "user1",
+      "idPatient": "user1.1946745485588133",
+      "operation": {
+        "title": "Prothèse de genou",
+        "id": "ptg"
+      },
+      "patient": {
+        "id": "user1.1946745485588133",
+        "sex": "MALE",
+        "lastname": "Boué",
+        "firstname": "Sébastien",
+        "email": "sebastienbouefree@gmail.com"
+      },
+      "interventionDate": "Mon Jul 31 2023"
+    },
+    {
+      "id": "track3.7312470644838305",
+      "idPs": "user1",
+      "operation": {
+        "title": "Prothèse de genou",
+        "id": "ptg"
+      },
+      "patient": {
+        "id": "user2.0870910612438247",
+        "sex": "FEMALE",
+        "lastname": "Boué",
+        "firstname": "Sébastien",
+        "email": "sebastienbouefree@gmail.com"
+      },
+      "interventionDate": "2023-07-27 00:00"
+    }
+  ]
+}

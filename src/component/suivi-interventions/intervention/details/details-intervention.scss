@@ -1,0 +1,55 @@
+.details-intervention-conteneur {
+
+  .entete-conteneur {
+    background: #000B3A;
+
+    .entete {
+      display: flex;
+      color: white;
+
+      .icone-sex {
+        font-size: 32px;
+        margin: 5px;
+
+        &.masculin {
+          color: #55a4f1
+        }
+
+        &.feminin {
+          color: #da89ee
+        }
+      }
+    }
+  }
+
+  .contenu-detail  {
+    width: 25vw;
+
+    .conteneur-detail-email,
+    .conteneur-detail-intervention {
+      display: flex;
+      margin-top: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #c2c3c5;
+
+      .icone {
+        color: #140d36;
+        margin-right: 24px;
+      }
+
+      .conteneur-libelle {
+        display: flex;
+        flex-direction: column;
+
+        .date-intervention-conteneur {
+          display: flex;
+
+          .text-le {
+            margin-right: 5px;
+          }
+
+        }
+      }
+    }
+  }
+}

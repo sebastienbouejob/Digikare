@@ -1,0 +1,44 @@
+.conteneur-login-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dadff5;
+
+  .conteneur-formulaire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #40486C;
+    width: 30vw;
+    height: 20vh;
+    background-color: #000B3A;
+    color: white;
+    border-radius: 10px;
+
+    .conteneur-login {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      margin-right: 24px;
+
+      .champs-saisie-login {
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+    }
+
+    .conteneur-bouton{
+      display: flex;
+      justify-content: end;
+    }
+
+  }
+
+
+}

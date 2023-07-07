@@ -6,29 +6,22 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Intervention} from "../../../modeles/front/intervention/Intervention";
+import {Intervention} from "../../../model/front/intervention/Intervention";
 import TableCell from '@mui/material/TableCell';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import dayjs from "dayjs";
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-    Grid,
-    Tooltip
-} from '@mui/material';
-import {Utilisateur} from "../../../modeles/front/Utilisateur";
+import {Grid, Tooltip} from '@mui/material';
+import {Utilisateur} from "../../../model/front/Utilisateur";
 import {RootStateOrAny, useDispatch, useSelector} from "react-redux";
 import {TypeUtilisateurEnum} from "../../../enum/TypeUtilisateurEnum";
 import '../../../App.css'
 import './tableau-suivi-interventions.scss'
-import interventionService from "../../../services/intervention/intervention.service";
+import interventionService from "../../../services/http/intervention/intervention.service";
 import DialogComponent from "../../commun/dialog/dialog.component";
-import DetailsInterventionComponent from "../details/details-intervention.component";
+import DetailsInterventionComponent from "../intervention/details/details-intervention.component";
+import {ReactJSXElement} from "@emotion/react/types/jsx-namespace";
+import dateService from "../../../services/util/date/date.service";
 
 const TableauSuiviInterventionsComponent = () => {
 
@@ -79,8 +72,79 @@ const TableauSuiviInterventionsComponent = () => {
         setOuvrirDetails(false);
     }
 
-    const dateInterventionEstValide = ( dateIntervention: Date | undefined) : boolean => {
-        return dateIntervention !== undefined && new Date(dateIntervention).getTime() > new Date().getTime();
+
+    const construireDialogueSupprimer = (): ReactJSXElement => {
+        return (
+            <div>
+                <DialogComponent
+                    titre={"Suppression de l'intervention"}
+                    libelle={"Voulez-vous vraiement supprimer cette intervention ?"}
+                    ouvrirDialogue={ouvrirDialogue}
+                    onClickValider={() => executerSupprimerIntervention()}
+                    onClickAnnuler={() => setOuvrirDialogue(false)}
+                />
+            </div>
+        );
+    }
+    const construireDialogueDetails = (): ReactJSXElement => {
+        return (
+            <div>
+                <DetailsInterventionComponent
+                    intervention={interventionSelectionnee}
+                    ouvrirDetail={ouvrirDetails}
+                    onClickQuitter={() => executerFermerDetails()}
+                />
+            </div>
+        );
+    }
+
+    const construireEnteteTableau = (): ReactJSXElement => {
+        return (
+            <TableHead>
+                <TableRow style={{backgroundColor: "#000B3A"}}>
+                    <TableCell align="left" style={{color: 'white'}}>Intervention</TableCell>
+                    <TableCell align="left" style={{color: 'white'}}>Date</TableCell>
+                    <TableCell align="left" style={{color: 'white'}}> </TableCell>
+                    <TableCell align="left" style={{color: 'white'}}> </TableCell>
+                </TableRow>
+            </TableHead>
+        );
+    }
+
+    const construireContenuTableau = (): ReactJSXElement => {
+        return (
+            <TableBody>
+                {Object.keys(suiviInterventions).length > 0 && suiviInterventions.map((intervention: Intervention) => (
+                    <TableRow key={intervention.identifiant}>
+                        <TableCell component="th" scope="row">
+                            {intervention.operation.libelle}
+                        </TableCell>
+                        <TableCell
+                            align="left">{construireDate(intervention.informationIntervention.interventionDate)}
+                        </TableCell>
+                        <TableCell align="left">
+                            <Tooltip title="Détails de l'intervention">
+                                <VisibilityOutlinedIcon style={{cursor: 'pointer', color: '#000B3A'}}
+                                                        onClick={() => executerClickSurBoutonDetail(intervention)}/>
+                            </Tooltip>
+                        </TableCell>
+                        {utilisateurEstPS &&
+                            (
+                                <TableCell align="left">
+                                    {dateService.dateEstPosterieureOuEgaleADateDuJour(intervention.informationIntervention.interventionDate) && (
+                                        <Tooltip title="Supprimer intervention">
+                                            <DeleteOutlinedIcon
+                                                style={{cursor: 'pointer', color: '#FF0266'}}
+                                                onClick={() => executerClickSurBoutonSupprimer(intervention)}
+                                            />
+                                        </Tooltip>)}
+                                </TableCell>
+                            )
+                        }
+                    </TableRow>
+                ))}
+            </TableBody>
+        );
     }
 
     return (
@@ -92,60 +156,14 @@ const TableauSuiviInterventionsComponent = () => {
             <Grid></Grid>
             <TableContainer component={Paper}>
                 <Table aria-label="customized table" style={{borderRadius: "10px", minWidth: "700px"}}>
-                    <TableHead>
-                        <TableRow style={{backgroundColor: "#000B3A"}}>
-                            <TableCell align="left" style={{color: 'white'}}>Intervention</TableCell>
-                            <TableCell align="left" style={{color: 'white'}}>Date</TableCell>
-                            {utilisateurEstPS && (
-                                <TableCell align="left" style={{color: 'white'}}>Email patient</TableCell>)}
-                            <TableCell align="left" style={{color: 'white'}}> </TableCell>
-                            <TableCell align="left" style={{color: 'white'}}> </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {Object.keys(suiviInterventions).length > 0 && suiviInterventions.map((intervention: Intervention) => (
-                            <TableRow key={intervention.identifiant}>
-                                <TableCell component="th" scope="row">
-                                    {intervention.operation.libelle}
-                                </TableCell>
-                                <TableCell align="left">{construireDate(intervention.informationIntervention.interventionDate)}</TableCell>
-                                {utilisateurEstPS && (<TableCell align="left">{intervention.informationPatient.email}</TableCell>)}
-                                <TableCell align="left">
-                                    <Tooltip title="Détails de l'intervention">
-                                        <VisibilityOutlinedIcon style={{cursor: 'pointer', color: '#000B3A'}}
-                                                                onClick={() => executerClickSurBoutonDetail(intervention)}/>
-                                    </Tooltip>
-                                </TableCell>
-                                {utilisateurEstPS &&
-                                    (<TableCell align="left">
-                                        {dateInterventionEstValide(intervention.informationIntervention.interventionDate) && (<Tooltip title="Supprimer intervention">
-                                            <DeleteOutlinedIcon style={{cursor: 'pointer', color: '#FF0266'}}
-                                                                onClick={() => executerClickSurBoutonSupprimer(intervention)}/>
-                                        </Tooltip>)}
-                                    </TableCell>)
-                                }
-                            </TableRow>
-                        ))}
-                    </TableBody>
+                    {construireEnteteTableau()}
+                    {construireContenuTableau()}
                 </Table>
             </TableContainer>
-            <div>
-                <DialogComponent
-                    titre={"Suppression de l'intervention"}
-                    libelle={"Voulez-vous vraiement supprimer cette intervention ?"}
-                    ouvrirDialogue={ouvrirDialogue}
-                    onClickValider={() => executerSupprimerIntervention()}
-                    onClickAnnuler={() => setOuvrirDialogue(false)}
-                 />
-            </div>
-            <div>
-                <DetailsInterventionComponent
-                    intervention ={interventionSelectionnee}
-                    ouvrirDetail={ouvrirDetails}
-                    onClickQuitter={() => executerFermerDetails()}
-                 />
-            </div>
+            {construireDialogueSupprimer()}
+            {construireDialogueDetails()}
         </Grid>
     );
+
 }
 export default TableauSuiviInterventionsComponent;

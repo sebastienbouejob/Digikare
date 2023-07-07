@@ -1,4 +1,4 @@
-import {Utilisateur} from "../../modeles/front/Utilisateur";
+import {Utilisateur} from "../../model/front/Utilisateur";
 import {utilisateurActionsTypes} from "./utilisateur-actions";
 
 

@@ -1,10 +1,11 @@
 import {Button, Grid, TextField} from "@mui/material";
 import React, {useEffect, useState} from 'react';
 import {RootStateOrAny, useDispatch, useSelector} from "react-redux";
-import utilisateurService from "../../services/utilisateur/utilisateur.service";
+import utilisateurService from "../../services/http/utilisateur/utilisateur.service";
 import {useNavigate} from "react-router-dom";
 import {TypeUtilisateurEnum} from "../../enum/TypeUtilisateurEnum";
 import "../../App.css";
+import "./login.scss"
 
 const LoginComponent = () => {
 
@@ -42,59 +43,19 @@ const LoginComponent = () => {
     }, [login])
 
     return (
-        <Grid
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100vw',
-                height: '100vh',
-                background: '#dadff5'
-            }}
-        >
+        <Grid className="conteneur-login-component">
             <form>
-                <Grid style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid #40486C',
-                    width: '30vw',
-                    height: '20vh',
-                    background: '#000B3A',
-                    color: 'white',
-                    borderRadius: '10px',
-                }}
-                >
-                    <Grid style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 'max-content',
-                        marginRight: '24px'
-                    }}>
-                        <Grid
-                            style={{
-                                width: '25%'
-                            }}
-                        >Login</Grid>
+                <Grid className="conteneur-formulaire">
+                    <Grid className="conteneur-login">
+                        <Grid style={{width: '25%'}}>Login</Grid>
                         <TextField
                             id="login"
-                            style={{
-                                backgroundColor: 'white',
-                                borderRadius: '5px',
-                                width: '100%'
-                            }}
+                            className="champs-saisie-login"
                             required
                             onChange={(event) => executerChangerLogin(event.target.value)}
                         />
                     </Grid>
-                    <Grid
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'end'
-                        }}
-                    >
+                    <Grid className="conteneur-bouton">
                         <Button
                             disabled={!activerBoutonValider}
                             style={{
